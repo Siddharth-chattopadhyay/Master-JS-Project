@@ -9,38 +9,69 @@
 </head>
 <body>
     <header>
-        <div class="py-2 text-center text-bg-success text-white">Free shipping on all U.S. orders $50+</div>
-        <div class="py-4 bg-white row justify-content-evenly row-cols-3">
-            <nav>
-                <ul class="nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-uppercase" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Home</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+        <section>
+            <div class="py-2 text-center text-bg-success text-white">Free shipping on all U.S. orders $50+</div>
+        </section>
+        <section>
+            <div class="py-4 bg-white row justify-content-evenly row-cols-3">
+                <div class="row justify-content-evenly">
+                    <button type="button" class="bg-white border-0" data-bs-toggle="offcanvas" href="#navcollapse" role="button" aria-controls="navcollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <nav class="d-none d-xxl-block">
+                        <ul class="nav text-uppercase">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Home</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Shop</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Product</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Pages</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Blog</a>
+                            </li>
                         </ul>
-                    </li>
-                    <li class="nav-item text-uppercase">
-                        <a class="nav-link" href="#">Shop</a>
-                    </li>
-                    <li class="nav-item text-uppercase">
-                        <a class="nav-link" href="#">Product</a>
-                    </li>
-                    <li class="nav-item text-uppercase">
-                        <a class="nav-link" href="#">Pages</a>
-                    </li>
-                    <li class="nav-item text-uppercase">
-                        <a class="nav-link" href="#">Blog</a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="row justify-content-center">
-                <img src="assets/images/logo-dark.png" alt="logo" class="header-logo">
+                    </nav>
+                </div>
+                <div class="row justify-content-center">
+                    <img src="assets/images/logo-dark.png" alt="logo" class="header-logo">
+                </div>
+                <div></div>
             </div>
-            <div></div>
+        </section>
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="navcollapse" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div>
+                Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+                </div>
+                <div class="dropdown mt-3">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Dropdown button
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+                </div>
+            </div>
         </div>
     </header>
     <main class="mt-5">
