@@ -32,7 +32,7 @@ let html = "";
 
 ParsedProducts.forEach((e) => {
     const card = `
-    <div class="card border-0" style="">
+    <div class="card border-0 mt-5" style="">
         <img src="${e.img}" class="card-img-top" alt="${e.productName}">
         <div class="card-body text-center">
             <p class="card-text">${e.price}</p>
