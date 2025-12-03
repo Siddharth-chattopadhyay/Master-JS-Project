@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Master Project</title>
     <link rel="stylesheet" href="assets/CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/CSS/bootstrap-icons.min.css">
     <link rel="stylesheet" href="assets/CSS/custom.css">
 </head>
 <body>
@@ -14,8 +15,9 @@
         </section>
         <section>
             <div class="py-4 bg-white row justify-content-evenly row-cols-3">
+                <!-- Navigation start here -->
                 <div class="row justify-content-evenly">
-                    <button type="button" class="bg-white border-0" data-bs-toggle="offcanvas" href="#navcollapse" role="button" aria-controls="navcollapse">
+                    <button type="button" class="bg-white border-0 d-block d-xxl-none" data-bs-toggle="offcanvas" href="#navcollapse" role="button" aria-controls="navcollapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <nav class="d-none d-xxl-block">
@@ -48,7 +50,12 @@
                 <div class="row justify-content-center">
                     <img src="assets/images/logo-dark.png" alt="logo" class="header-logo">
                 </div>
-                <div></div>
+                <div class="text-end pe-5">
+                    <a href="./add-products.html" class="text-dark text-decoration-none">
+                        <i class="bi bi-plus-lg"></i>
+                        Add Products
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -90,5 +97,8 @@
     <footer></footer>
     <script src="assets/JS/bootstrap.bundle.min.js"></script>
     <script src="assets/JS/custom.js"></script>
+    <script>
+        Home();
+    </script>
 </body>
 </html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add products</title>
+    <link rel="stylesheet" href="assets/CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/CSS/bootstrap-icons.min.css">
+</head>
+<body>
+    <header>
+        <div class="py-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Add Products</li>
+                </ol>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <!-- Add Products Form -->
+        <section>
+            <form class="row g-3 bg-light p-5">
+                <div class="col-md-12">
+                    <label for="pname" class="form-label">Product Name</label>
+                    <div class="input-group has-validation">
+                    <input type="text" class="form-control" id="pname" aria-describedby="pnamefb" required>
+                    <div id="pnamefb" class="invalid-feedback">
+                        Please provide a product name
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label for="pimage" class="form-label">Product Image URL</label>
+                    <div class="input-group has-validation">
+                    <input type="text" class="form-control" id="pimage" aria-describedby="pimagefb" required>
+                    <div id="pimagefb" class="invalid-feedback">
+                        Please provide a URL to the product image
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label for="p_price" class="form-label">Product Price</label>
+                    <div class="input-group has-validation">
+                    <input type="text" class="form-control" id="p_price" aria-describedby="p_pricefb" required>
+                    <div id="p_pricefb" class="invalid-feedback">
+                        Please provide a product price (in number)
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <label for="pcolor" class="form-label">Product Color</label>
+                    <div class="input-group">
+                    <input type="color" class="form-control" id="pcolor">
+                    </div>
+                </div>
+                <button type="button" class="btn btn-secondary box-shadow" onclick="addProduct()">Add Product</button>
+            </form>
+        </section>
+    </main>
+    <footer></footer>
+    <script src="assets/JS/custom.js"></script>
+</body>
+</html>
