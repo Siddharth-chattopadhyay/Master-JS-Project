@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add products</title>
+    <title>Edit Product</title>
     <link rel="stylesheet" href="assets/CSS/bootstrap.min.css">
     <link rel="stylesheet" href="assets/CSS/bootstrap-icons.min.css">
 </head>
@@ -13,13 +13,12 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center">
                     <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Add Products</li>
+                    <li class="breadcrumb-item active" aria-current="page">Edit Product</li>
                 </ol>
             </nav>
         </div>
     </header>
     <main>
-        <!-- Add Products Form -->
         <section class="row justify-content-center">
             <form class="row g-3 bg-light p-5 w-50">
                 <div class="col-md-12">
@@ -67,11 +66,16 @@
                     <textarea type="color" class="form-control" id="desc"></textarea>
                     </div>
                 </div>
-                <button type="button" class="btn btn-secondary box-shadow" onclick="addProduct()">Add Product</button>
+                <button type="button" class="btn btn-secondary box-shadow" onclick="finishEdit()">Add Product</button>
             </form>
         </section>
     </main>
-    <footer></footer>
+    <footer>
+
+    </footer>
     <script src="assets/JS/custom.js"></script>
+    <script>
+        editproductPage();
+    </script>
 </body>
 </html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Products</title>
+    <link rel="stylesheet" href="assets/CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/CSS/bootstrap-icons.min.css">
+    <style>
+        tr > * {
+            padding: 0 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="py-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">View Product</li>
+                </ol>
+            </nav>
+        </div>
+    </header>
+    <main class="row justify-content-center">
+        <table class="text-center">
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Product Image</th>
+                    <th>Product Price</th>
+                    <th>Product Color</th>
+                    <th>Product Quantity</th>
+                    <th>Product Description</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="view-product">
+
+            </tbody>
+        </table>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="assets/JS/custom.js"></script>
+    <script>
+        viewProduct();
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="assets/CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/CSS/bootstrap-icons.min.css">
+</head>
+<body>
+    <header>
+        <div class="py-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Cart</li>
+                </ol>
+            </nav>
+        </div>
+    </header>
+    <main class="row justify-content-center">
+        <table class="text-center">
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Product Image</th>
+                    <th>Product Price</th>
+                    <th>Product Color</th>
+                    <th>Product Quantity</th>
+                    <th>Product Description</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="cart">
+
+            </tbody>
+        </table>
+        <div>
+            <span>Total Price: </span>
+            <span id="totalprice"></span>
+        </div>
+    </main>
+    <script src="assets/JS/custom.js"></script>
+    <script>
+        pagecart();
+    </script>
+</body>
+</html>
