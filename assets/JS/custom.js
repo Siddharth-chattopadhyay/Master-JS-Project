@@ -1,39 +1,39 @@
 const Products = [
     {
-        "productId": 1001,
+        "productId": "1001",
         "img": "assets/images/product/product-1.jpg",
         "productName": "Scalp Moisturizing Cream",
         "color": "red",
         "price": 2605,
         "qty": 10,
-        "desc": ""
+        "desc": "lorem"
     },
     {
-        "productId": 1002,
+        "productId": "1002",
         "img": "assets/images/product/product-2.jpg",
         "productName": "Enriched Hand & Body Wash",
         "color": "white",
         "price": 2066,
         "qty": 10,
-        "desc": ""
+        "desc": "ditto"
     },
     {
-        "productId": 1003,
+        "productId": "1003",
         "img": "assets/images/product/product-3.jpg",
         "productName": "Enriched Hand Wash",
         "color": "black",
         "price": 2246,
         "qty": 10,
-        "desc": ""
+        "desc": "ipsum"
     },
     {
-        "productId": 1004,
+        "productId": "1004",
         "img": "assets/images/product/product-4.jpg",
         "productName": "Enriched Duo",
         "color": "blue",
         "price": 2426,
         "qty": 10,
-        "desc": ""
+        "desc": "sit"
     }
 ];
 
@@ -51,7 +51,7 @@ function Home(){
                 <h5 class="card-title">${e.productName}</h5>
                 <div>
                     <button class="btn btn-dark" onclick="addToCart(${e.productId})">Add to cart</button>
-                    <button class="btn btn-dark">View Details</button>
+                    <button class="btn btn-dark" onclick="showDetail(${e.productId})">View Details</button>
                 </div>
             </div>
         </div>`;
@@ -66,7 +66,16 @@ function addToCart(id){
     if (exists)
         alert("Item already exists");
     else if (product){
-        cart.push(product);
+        cart.push({
+            "productId": product.productId,
+            "img": product.img,
+            "productName": product.productName,
+            "color": product.color,
+            "price": product.price,
+            "cartQty": 1,
+            "qty": product.qty,
+            "desc": product.desc
+        })
         localStorage.setItem("cart", JSON.stringify(cart));
         alert("Item added to cart successfully!");
     }
@@ -89,13 +98,14 @@ function pagecart(){
                 <td>${v.productName}</td>
                 <td><img src="${v.img}" alt="${v.productName}" width="50"></td>
                 <td>${v.price}</td>
+                <td>${v.price * v.cartQty}</td>
                 <td>${v.color}</td>
                 <td>
-                    <button class="btn btn-dark"><i class="bi bi-plus"></i></button>
+                <button class="btn btn-dark" onclick="decrement(${v.productId})"><i class="bi bi-dash"></i></button>
                     <span class="mx-2">
-                        ${v.qty}
+                    ${v.cartQty}
                     </span>
-                    <button class="btn btn-dark"><i class="bi bi-dash"></i></button>
+                <button class="btn btn-dark" onclick="increment(${v.productId})"><i class="bi bi-plus"></i></button>
                 </td>
                 <td>${v.desc}</td>
                 <td>
@@ -108,7 +118,7 @@ function pagecart(){
                 </td>
             </tr>
         `;
-        total += Number(v.price);
+        total += Number(v.price * v.cartQty);
     });
 
     totalPriceHolder.innerHTML = total
@@ -237,4 +247,62 @@ function finishEdit(){
         }
         localStorage.removeItem("edit");
     }
+}
+
+/**
+ * <button class="btn btn-dark" onclick="increment(${v.productId})"><i class="bi bi-plus"></i></button>
+                    <span class="mx-2">
+                        ${v.cartQty}
+                    </span>
+                    <button class="btn btn-dark" onclick="decrement(${v.productId})"><i class="bi bi-dash"></i></button>
+ */
+
+function increment(id){
+    const product = cart.find(p => p.productId == id);
+    if (!product)
+        alert("Item does not exists...");
+    else if (product.cartQty >= product.qty)
+        alert("Maximum product reached");
+    else
+        product.cartQty++;
+    localStorage.setItem("cart", JSON.stringify(cart));
+    pagecart();
+}
+function decrement(id){
+    const product = cart.find(p => p.productId == id);
+    if (!product)
+        alert("Item does not exists...");
+    else if (product.cartQty <= 1)
+        alert("Minimum value is 1");
+    else 
+        product.cartQty--;
+    localStorage.setItem("cart", JSON.stringify(cart));
+    pagecart();
+}
+
+function showDetail(id){
+    localStorage.setItem("detail", id);
+    document.location.href = "./view-details.html";
+}
+
+function viewDetails(){
+    const doc = document.getElementById("detail");
+    const product = products.find(v => v.productId == localStorage.getItem("detail"));
+    if (!product)
+        doc.innerHTML = "Product not found...";
+    const html = `
+        <div class="col-6">
+            <img src="${product.img}" alt="product-image">
+        </div>
+        <div class="col-6">
+            <p>Product Name: ${product.productName}</p>
+            <p>Product color: ${product.color}</p>
+            <p>Product price: ${product.price}</p>
+            <p>Product Quantity: ${product.qty}</p>
+            <p>${product.desc}</p>
+            <button class="btn btn-dark" onclick="addToCart(${product.productId})">Add to cart</button>
+        </div>
+    `;
+    doc.innerHTML = html;
+    localStorage.removeItem("detail");
 }
